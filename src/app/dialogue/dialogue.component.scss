@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+
+h1,
+h2,
+h3,
+p {
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.dialogue {
+  height: 91px;
+  width: 100%;
+  background-color: #112731;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  padding-top: 6px;
+  position: relative;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+    width: 100%;
+    border-bottom: 1px solid #224754;
+    overflow: hidden;
+  }
+
+  &__name {
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__mail {
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 18px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .decor {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.addition {
+  max-width: 80px;
+  height: 80%;
+  width: 100%;
+  border-bottom: 1px solid #224754;
+
+  &__clock {
+    content: '';
+    position: relative;
+    top: 0;
+    font-weight: 300;
+    font-size: 18px;
+  }
+
+  &__counter {
+    position: relative;
+    bottom: -10px;
+    right: -20px;
+    max-width: 20px;
+    width: 100%;
+    height: 20px;
+    background-color: #d47559;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  &__counter p {
+    font-size: 12px;
+  }
+}

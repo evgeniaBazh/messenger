@@ -1,1 +1,18 @@
-<p>login works!</p>
+<main class="login">
+  <div class="container">
+    <div class="form-panel">
+      <div class="tabs">
+        <div class="tabs__tab" *ngFor="let tab of tabs" (click)="onTabClick(tab.name)" [ngClass]="{'tabs__tab--active': currentTab === tab.name}">
+          {{ tab.label }}
+        </div>
+        <ng-template></ng-template>
+        <div class="tabs__tab-body" *ngIf="currentTab === tabNames.LOGIN">
+          Login
+        </div>
+        <div class="tabs__tab-body" *ngIf="currentTab === tabNames.REGISTER">
+          Register
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

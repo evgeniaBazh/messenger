@@ -1,0 +1,40 @@
+@import 'src/styles/_variables.scss';
+
+.custom-input {
+  height: 42px;
+  background-color: $inputs;
+  width: 100%;
+  color: $light;
+  font-size: 18px;
+  border: 2px solid $inputs;
+  outline: none;
+  padding-left: 12px;
+  border-radius: 4px;
+  font-family: 'Roboto Mono', monospace;
+
+  &:focus {
+    box-shadow: $neon-shadow;
+    border: 2px solid $light;
+  }
+}
+
+.toggle-visibility {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+  background: none;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &__icon {
+    fill: $light;
+    @include neon-svg();
+  }
+}
+
+.wrapper {
+  position: relative;
+}

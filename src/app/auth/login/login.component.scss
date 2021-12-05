@@ -1,0 +1,29 @@
+@import 'src/styles/_variables.scss';
+
+.form-panel {
+  max-width: 650px;
+  margin: auto;
+  background: $panels;
+  padding: 72px 100px;
+  box-shadow: $neon-shadow;
+}
+
+.login {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  background: url('~/src/assets/img/auth-bg.png');
+  background-size: cover;
+}
+
+.tabs {
+  &__tab {
+    &-body {
+      display: none;
+      flex-direction: column;
+      &--visible {
+        display: flex;
+      }
+    }
+  }
+}

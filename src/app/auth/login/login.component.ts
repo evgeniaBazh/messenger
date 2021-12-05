@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 enum TabNames {
   LOGIN,
@@ -26,6 +27,10 @@ export class LoginComponent implements OnInit {
     }
   ]
   currentTab: TabNames = TabNames.LOGIN;
+  loginForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  })
   get tabNames(): typeof TabNames {
     return TabNames;    
   }

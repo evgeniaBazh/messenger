@@ -1,6 +1,6 @@
-<div class="dialogue">
+<div class="dialogue" *ngIf="chat">
   <div class="dialogue__avatar">
-    <app-avatar [src]="chat.avatarSrc"></app-avatar>
+    <app-avatar [src]="chat.avatarSrc" [status]="chat.status"></app-avatar>
   </div>
   <div class="dialogue__block">
     <p class="dialogue__name">

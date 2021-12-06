@@ -1,0 +1,88 @@
+@import 'src/styles/_variables.scss';
+h1,
+h2,
+h3,
+p {
+  font-family: 'Roboto', sans-serif;
+  color: $light;
+  margin: 0;
+  padding: 0;
+}
+
+.dialogue {
+  height: 91px;
+  width: 100%;
+  background-color: $panels;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  padding-top: 6px;
+  position: relative;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+    width: 100%;
+    border-bottom: 1px solid $line;
+    overflow: hidden;
+  }
+
+  &__name {
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__mail {
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 18px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .decor {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.addition {
+  max-width: 80px;
+  height: 80%;
+  width: 100%;
+  border-bottom: 1px solid $line;
+
+  &__clock {
+    content: '';
+    position: relative;
+    top: 0;
+    font-weight: 300;
+    font-size: 18px;
+  }
+
+  &__counter {
+    position: relative;
+    bottom: -10px;
+    min-height: 20px;
+    background-color: $count;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    padding: 2px 9px;
+  }
+
+  &__counter p {
+    font-size: 12px;
+  }
+}

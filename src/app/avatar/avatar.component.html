@@ -1,6 +1,16 @@
-<img
-  class="photo"
-  [ngStyle]="{ width: size, height: size }"
-  src="{{ src }}"
-  alt=""
-/>
+<div class="photo-wrap">
+  <img
+    class="photo"
+    [ngStyle]="{ width: size, height: size }"
+    src="{{ src }}"
+    alt=""
+  />
+  <div
+    class="badge"
+    *ngIf="status"
+    [ngClass]="{
+      online: status === 'online',
+      inactive: status === 'inactive'
+    }"
+  ></div>
+</div>

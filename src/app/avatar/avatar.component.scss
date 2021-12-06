@@ -1,4 +1,31 @@
+@import 'src/styles/_variables.scss';
+
+.photo-wrap {
+  position: relative;
+}
+
 .photo {
   display: block;
   border-radius: 50%;
+}
+
+.badge {
+  height: 14px;
+  width: 14px;
+  line-height: 14px;
+  border-radius: 50%;
+  vertical-align: baseline;
+  position: absolute;
+  top: -4px;
+  right: -3px;
+  cursor: inherit;
+  border: 4px solid $panels;
+}
+
+.online {
+  background-color: $badge-online;
+}
+
+.inactive {
+  background-color: $badge-inactive;
 }

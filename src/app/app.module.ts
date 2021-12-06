@@ -6,9 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { ModalComponent } from './modal/modal.component';
+import { DialogueComponent } from './dialogue/dialogue.component';
 
 @NgModule({
-  declarations: [AppComponent, AvatarComponent, ModalComponent],
+  declarations: [
+    AppComponent,
+    AvatarComponent,
+    DialogueComponent,
+    ModalComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -41,6 +41,4 @@ export class ModalComponent implements OnInit {
   stopPropagation(event: MouseEvent) {
     event.stopPropagation();
   }
-
-  showModal() {}
 }

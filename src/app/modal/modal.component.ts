@@ -15,7 +15,7 @@ import {
 export class ModalComponent implements OnInit {
   @Input() isModalVisible: boolean = false;
 
-  @Output() isModalChange = new EventEmitter<boolean>();
+  @Output() isModalVisibleChange = new EventEmitter<boolean>();
   constructor() {}
 
   ngOnInit(): void {}
@@ -24,8 +24,18 @@ export class ModalComponent implements OnInit {
     event: KeyboardEvent
   ) {
     if (event.key === 'Escape' && this.isModalVisible === true) {
-      this.isModalVisible = false;
+      this.hide();
     }
+  }
+
+  show() {
+    this.isModalVisible = true;
+    this.isModalVisibleChange.emit(this.isModalVisible);
+  }
+
+  hide() {
+    this.isModalVisible = false;
+    this.isModalVisibleChange.emit(this.isModalVisible);
   }
 
   stopPropagation(event: MouseEvent) {

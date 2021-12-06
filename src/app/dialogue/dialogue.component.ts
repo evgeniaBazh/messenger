@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Dialog } from '../types/dialog.interface';
 
 @Component({
   selector: 'app-dialogue',
@@ -7,6 +8,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DialogueComponent implements OnInit {
   constructor() {}
-  @Input() chat: any;
+  @Input() chat?: Dialog;
   ngOnInit(): void {}
 }

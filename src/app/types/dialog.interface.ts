@@ -4,5 +4,5 @@ export interface Dialog {
   name: string;
   lastMessage: string;
   counterMail: number;
-  status: string;
+  status: 'online' | 'inactive' | null;
 }

@@ -1,1 +1,5 @@
-<p>modal works!</p>
+<div class="wrap" *ngIf="isModalVisible" (click)="isModalVisible = false">
+  <div class="modal" (click)="stopPropagation($event)">
+    <ng-content> </ng-content>
+  </div>
+</div>

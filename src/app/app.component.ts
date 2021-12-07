@@ -8,5 +8,7 @@ import { Dialog } from './types/dialog.interface';
 })
 export class AppComponent {
   title = 'messenger';
+
+  modalCard = false;
   // TODO удалить после реализации взаимодействия с сервером
 }

@@ -7,3 +7,12 @@
   background-color: $primary;
   border-bottom: 1px solid $line;
 }
+
+.messaging {
+  background-image: $gradient;
+  width: 100%;
+}
+
+.chat-page {
+  display: flex;
+}

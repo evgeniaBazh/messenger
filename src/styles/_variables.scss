@@ -1,15 +1,23 @@
 $primary: #112731;
-$dark: #101E29;
+$dark: #101e29;
 $light: #ffffff;
 $panels: $primary;
 $inputs: $dark;
+$line: #224754;
+$count: #004f73;
 $rounded-radius: 8px;
-$neon-shadow: 0px 2px 6px #00577E, 0px -2px 6px #006B65;
-$placeholder: #5D777D;
-$accent: #00577E;
-$success: #006B65;
-$gradient: radial-gradient(181.74% 378.12% at 94.75% 71.25%, #0D202B 0%, #080613 100%, #0D202B 100%);
-
 @mixin neon-svg() {
   filter: drop-shadow(0px 2px 6px #00577E) drop-shadow(0px -2px 6px #006B65);
 }
+$neon-shadow: 0px 2px 6px #00577e, 0px -2px 6px #006b65;
+$placeholder: #5d777d;
+$accent: #00577e;
+$badge-online: #14ca10;
+$badge-inactive: #d3b200;
+$success: #006b65;
+$gradient: radial-gradient(
+  181.74% 378.12% at 94.75% 71.25%,
+  #0d202b 0%,
+  #080613 100%,
+  #0d202b 100%
+);

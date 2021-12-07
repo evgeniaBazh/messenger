@@ -1,1 +1,4 @@
-<p>contacts works!</p>
+<div class="contacts">
+  <app-dialogue [chat]="chat" *ngFor="let chat of contacts"></app-dialogue>
+</div>
+<app-current-user></app-current-user>

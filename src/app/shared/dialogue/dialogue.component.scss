@@ -22,9 +22,7 @@ p {
   &__block {
     display: flex;
     flex-direction: column;
-    margin-left: 24px;
     width: 100%;
-    border-bottom: 1px solid $line;
     overflow: hidden;
   }
 
@@ -57,9 +55,9 @@ p {
 
 .addition {
   max-width: 80px;
-  height: 80%;
+  height: 90%;
   width: 100%;
-  border-bottom: 1px solid $line;
+  margin-left: 10px;
 
   &__clock {
     content: '';
@@ -72,7 +70,7 @@ p {
   &__counter {
     position: relative;
     bottom: -10px;
-    min-height: 20px;
+    min-height: 24px;
     background-color: $count;
     border-radius: 50%;
     display: inline-flex;
@@ -85,4 +83,18 @@ p {
   &__counter p {
     font-size: 12px;
   }
+}
+
+.wrap {
+  border-bottom: 1px solid $line;
+  height: 85px;
+  width: 100%;
+  background-color: $panels;
+  display: flex;
+  align-items: center;
+  padding-top: 6px;
+  position: relative;
+  margin-left: 24px;
+  overflow: hidden;
+  white-space: nowrap;
 }

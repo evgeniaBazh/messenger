@@ -4,18 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AvatarComponent } from './avatar/avatar.component';
-import { ModalComponent } from './modal/modal.component';
-import { DialogueComponent } from './dialogue/dialogue.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AvatarComponent,
-    DialogueComponent,
-    ModalComponent,
-  ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -6,6 +6,9 @@ $inputs: $dark;
 $line: #224754;
 $count: #004f73;
 $rounded-radius: 8px;
+@mixin neon-svg() {
+  filter: drop-shadow(0px 2px 6px #00577E) drop-shadow(0px -2px 6px #006B65);
+}
 $neon-shadow: 0px 2px 6px #00577e, 0px -2px 6px #006b65;
 $placeholder: #5d777d;
 $accent: #00577e;

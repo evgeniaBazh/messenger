@@ -35,6 +35,17 @@
   }
 }
 
+.placeholder {
+  font-size: 18px;
+  color: $placeholder;
+  position: absolute;
+  white-space: nowrap;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
 .wrapper {
   position: relative;
 }

@@ -21,7 +21,10 @@ export class InputComponent implements OnInit {
   autocomplete: string = '';
 
   @Input()
-  name?: string;
+  placeholder: string = '';
+
+  @Input()
+  name: string = '';
 
   // Эмуляция ngModel
   @Input('ngModel')
@@ -31,6 +34,7 @@ export class InputComponent implements OnInit {
   public modelChanged: EventEmitter<string> = new EventEmitter();
 
   visibility: boolean = false;
+  focused: boolean = false;
 
   get currentType(): InputTypes {
     if (this.type !== InputTypes.password) {

@@ -26,6 +26,9 @@ export class InputComponent implements OnInit {
   @Input()
   name: string = '';
 
+  @Input()
+  label?: string;
+
   // Эмуляция ngModel
   @Input('ngModel')
   public model: string = ''

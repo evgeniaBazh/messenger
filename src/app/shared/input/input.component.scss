@@ -28,6 +28,11 @@
   outline: none;
   border: none;
   cursor: pointer;
+  border-radius: 100px;
+
+  &:focus-visible {
+    box-shadow: $neon-shadow;
+  }
 
   &__icon {
     fill: $light;

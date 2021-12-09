@@ -28,7 +28,7 @@ export class ContactsComponent implements OnInit {
       name: 'Лёша',
       lastMessage: 'Привет, закончила вёрстку? Нужно уже двигаться дальше.',
       counterMail: 0,
-      status: 'online',
+      status: null,
     },
     {
       avatarSrc:

@@ -29,6 +29,7 @@ p {
   border: none;
   box-shadow: none;
   outline: none;
+  cursor: pointer;
   svg {
     fill: $light;
     @include neon-svg;

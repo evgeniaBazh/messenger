@@ -1,7 +1,7 @@
 <div class="current-user">
   <app-avatar></app-avatar>
   <p>Персик Иваныч Рыжулькин</p>
-  <button class="settings">
+  <button class="settings" (click)="isSettingsVisible = true">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       height="24px"
@@ -16,3 +16,6 @@
     </svg>
   </button>
 </div>
+<app-modal [(isModalVisible)]="isSettingsVisible">
+  <app-settings-modal></app-settings-modal>
+</app-modal>

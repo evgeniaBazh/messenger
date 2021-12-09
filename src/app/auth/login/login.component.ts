@@ -27,10 +27,10 @@ export class LoginComponent implements OnInit {
     }
   ]
   currentTab: TabNames = TabNames.LOGIN;
-  loginForm = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-  })
+  loginForm = {
+    email: '',
+    password: '',
+  }
   get tabNames(): typeof TabNames {
     return TabNames;    
   }
@@ -38,6 +38,10 @@ export class LoginComponent implements OnInit {
   constructor() { }
   onTabClick(currentTab: TabNames) {
     this.currentTab = currentTab
+  }
+  onLogin() {
+    console.log(this.loginForm);
+    
   }
   ngOnInit(): void {
   }

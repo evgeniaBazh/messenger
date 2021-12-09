@@ -29,11 +29,15 @@ export class InputComponent implements OnInit {
   @Input()
   label?: string;
 
+  onInput() {
+    this.modelChange.emit(this.model);
+  }
+
   // Эмуляция ngModel
-  @Input('ngModel')
+  @Input()
   public model: string = ''
 
-  @Output('ngModelChange')
+  @Output()
   public modelChange: EventEmitter<string> = new EventEmitter();
 
   visibility: boolean = false;

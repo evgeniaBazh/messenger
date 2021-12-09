@@ -11,6 +11,7 @@
     (focus)="focused = true"
     (blur)="focused = false"
     [(ngModel)]="model"
+    (input)="onInput()"
   />
   <span *ngIf="placeholder && !focused" class="placeholder">
     {{ placeholder }}

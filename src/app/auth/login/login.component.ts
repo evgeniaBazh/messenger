@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 
 enum TabNames {
   LOGIN,
@@ -39,9 +38,8 @@ export class LoginComponent implements OnInit {
   onTabClick(currentTab: TabNames) {
     this.currentTab = currentTab
   }
-  onLogin() {
+  send() {
     console.log(this.loginForm);
-    
   }
   ngOnInit(): void {
   }

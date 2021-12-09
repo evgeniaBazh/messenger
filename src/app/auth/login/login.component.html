@@ -8,10 +8,9 @@
       </div>
       <ng-template></ng-template>
       <div class="tabs__tab-body" [ngClass]="{'tabs__tab-body--visible': currentTab === tabNames.LOGIN}">
-        <form action="">
-          <app-input label="E-mail" name="username" contentClass="mb-4" autocomplete="username"></app-input>
-          <app-input label="Пароль" name="password" type="password" autocomplete="current-password" contentClass="mb-4"></app-input>
-        </form>
+        <app-input label="E-mail" [(model)]="loginForm.email" name="username" contentClass="mb-4" autocomplete="username"></app-input>
+        <app-input label="Пароль" [(model)]="loginForm.password" name="password" type="password" autocomplete="current-password" contentClass="mb-4"></app-input>
+        <button class="btn" (click)="send()">Вход</button>
       </div>
       <div class="tabs__tab-body" [ngClass]="{'tabs__tab-body--visible': currentTab === tabNames.REGISTER}">
         <app-input label="Отображаемое имя" name="username" contentClass="mb-4" autocomplete="username"></app-input>
@@ -19,6 +18,7 @@
         <app-input label="Подтвердите пароль" name="password" type="password" autocomplete="current-password" contentClass="mb-4"></app-input>
         <app-input label="E-mail" name="email" type="email" autocomplete="email" contentClass="mb-4"></app-input>
         <app-input label="Номер телефона" name="password" type="text" autocomplete="phone" contentClass="mb-4"></app-input>
+        <button class="btn">Регистрация</button>
       </div>
     </div>
   </div>

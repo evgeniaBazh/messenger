@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Dialog } from './types/dialog.interface';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'messenger';
+
+  modalCard = false;
+  // TODO удалить после реализации взаимодействия с сервером
 }

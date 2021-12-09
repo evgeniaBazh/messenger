@@ -4,6 +4,11 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { MessagingComponent } from './messaging/messaging.component';
 import { Route, RouterModule } from '@angular/router';
 import { ChatComponent } from './chat/chat.component';
+import { DialogueModule } from '../shared/dialogue/dialogue.module';
+import { CurrentUserComponent } from './current-user/current-user.component';
+import { AvatarModule } from '../shared/avatar/avatar.module';
+import { ModalModule } from '../shared/modal/modal.module';
+import { SettingsModalComponent } from '../shared/settings-modal/settings-modal.component';
 
 const routes: Route[] = [
   {
@@ -12,7 +17,19 @@ const routes: Route[] = [
   },
 ];
 @NgModule({
-  declarations: [ContactsComponent, MessagingComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  declarations: [
+    ContactsComponent,
+    MessagingComponent,
+    ChatComponent,
+    SettingsModalComponent,
+    CurrentUserComponent,
+  ],
+  imports: [
+    CommonModule,
+    AvatarModule,
+    RouterModule.forChild(routes),
+    ModalModule,
+    DialogueModule,
+  ],
 })
 export class ChatModule {}

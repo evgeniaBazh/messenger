@@ -33,8 +33,8 @@ export class InputComponent implements OnInit {
   @Input('ngModel')
   public model: string = ''
 
-  @Output('ngModelChanged')
-  public modelChanged: EventEmitter<string> = new EventEmitter();
+  @Output('ngModelChange')
+  public modelChange: EventEmitter<string> = new EventEmitter();
 
   visibility: boolean = false;
   focused: boolean = false;

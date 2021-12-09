@@ -1,8 +1,10 @@
 <main class="login">
   <div class="form-panel">
     <div class="tabs">
-      <div class="tabs__tab" *ngFor="let tab of tabs" (click)="onTabClick(tab.name)" [ngClass]="{'tabs__tab--active': currentTab === tab.name}">
-        {{ tab.label }}
+      <div class="tabs__wrapper">
+        <div class="tabs__tab" *ngFor="let tab of tabs" (click)="onTabClick(tab.name)" [ngClass]="{'tabs__tab--active': currentTab === tab.name}">
+          {{ tab.label }}
+        </div>
       </div>
       <ng-template></ng-template>
       <div class="tabs__tab-body" [ngClass]="{'tabs__tab-body--visible': currentTab === tabNames.LOGIN}">

@@ -4,7 +4,7 @@
   max-width: 650px;
   margin: auto;
   background: $panels;
-  padding: 72px 100px;
+  padding: 72px 90px;
   box-shadow: $neon-shadow;
 }
 
@@ -17,7 +17,40 @@
 }
 
 .tabs {
+  &__wrapper {
+    display: flex;
+    margin-bottom: 84px;
+  }
   &__tab {
+    height: 36px;
+    cursor: pointer;
+    width: 50%;
+    color: $light;
+    font-size: 24px;
+    border-bottom: 1px solid $line;
+
+    &--active {
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: $light;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        box-shadow: $neon-shadow;
+        animation: opacity 0.2s linear;
+      }
+    }
+
+    @keyframes opacity {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+    
     &-body {
       display: none;
       flex-direction: column;

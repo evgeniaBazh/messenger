@@ -9,8 +9,8 @@
       <ng-template></ng-template>
       <div class="tabs__tab-body" [ngClass]="{'tabs__tab-body--visible': currentTab === tabNames.LOGIN}">
         <form action="">
-          <app-input contentClass="mb-4" autocomplete="username"></app-input>
-          <app-input type="password" autocomplete="current-password" contentClass="mb-4"></app-input>
+          <app-input label="Имя пользователя" name="username" contentClass="mb-4" autocomplete="username"></app-input>
+          <app-input label="Пароль" name="password" type="password" autocomplete="current-password" contentClass="mb-4"></app-input>
         </form>
       </div>
       <div class="tabs__tab-body" [ngClass]="{'tabs__tab-body--visible': currentTab === tabNames.REGISTER}">

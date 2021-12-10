@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./messaging.component.scss'],
 })
 export class MessagingComponent implements OnInit {
-  messenger = [
+  messages = [
     {
       id: 1,
       user: {

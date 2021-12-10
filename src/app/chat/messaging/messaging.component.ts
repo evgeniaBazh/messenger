@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Message } from '../types/message.interface';
 
 @Component({
   selector: 'app-messaging',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./messaging.component.scss'],
 })
 export class MessagingComponent implements OnInit {
-  messages = [
+  messages: Message[] = [
     {
       id: 1,
       user: {

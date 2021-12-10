@@ -1,4 +1,4 @@
-export interface MessagingComponent {
+export interface Message {
   id: number;
   user: {
     avatar: string;
@@ -6,7 +6,7 @@ export interface MessagingComponent {
     id: number;
   };
   text: string;
-  time: Date;
+  time: string;
   isCurrentUser: boolean;
   img: string;
 }

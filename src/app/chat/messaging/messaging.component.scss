@@ -1,0 +1,62 @@
+@import 'src/styles/_variables.scss';
+
+p {
+  font-family: 'Roboto', sans-serif;
+  color: $light;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 400;
+  text-shadow: $neon-shadow;
+  line-height: 21px;
+}
+
+.block-messages {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.name-time {
+  display: flex;
+  margin-bottom: 21px;
+
+  &__user-name {
+    margin-right: 7px;
+  }
+
+  &__time {
+    font-weight: 300;
+    opacity: 0.6;
+  }
+}
+
+.message {
+  margin-left: 11px;
+
+  &__text p {
+    padding: 7px 9px 10px 13px;
+    margin-bottom: 3px;
+    width: 690px;
+    border-radius: 8px;
+  }
+
+  &__text p:first-child {
+    border-radius: 0px 8px 8px 8px;
+  }
+
+  &__img {
+    margin-top: 13px;
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+}
+
+.sent {
+  background: $accent;
+}
+
+.incoming {
+  background: $success;
+}

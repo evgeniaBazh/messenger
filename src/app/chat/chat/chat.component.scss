@@ -11,6 +11,10 @@
 .messaging {
   background-image: $gradient;
   width: 100%;
+  padding: 43px 60px 43px 21px;
+  height: 100vh;
+  overflow: auto;
+  max-width: 100%;
 }
 
 .chat-page {

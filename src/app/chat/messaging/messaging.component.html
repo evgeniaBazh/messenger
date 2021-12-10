@@ -1,1 +1,37 @@
-<p>messaging works!</p>
+<div class="block-messages" *ngFor="let message of messenger">
+  <div class="block-messages__avatar">
+    <app-avatar [src]="message.user.avatar"></app-avatar>
+  </div>
+  <div class="message">
+    <div class="name-time">
+      <p class="name-time__user-name">{{ message.user.name }}</p>
+      <p class="name-time__time">
+        {{ message.time }}
+      </p>
+    </div>
+    <div class="message__text">
+      <p
+        [ngClass]="{
+          sent: message.isCurrentUser,
+          incoming: !message.isCurrentUser
+        }"
+        *ngIf="(message.img && message.text) || message.text"
+      >
+        {{ message.text }}
+        <br />
+        <img
+          *ngIf="message.img && message.text"
+          src="{{ message.img }}"
+          alt=""
+          class="message__img"
+        />
+      </p>
+      <img
+        *ngIf="message.img && !message.text"
+        src="{{ message.img }}"
+        alt=""
+        class="message__img"
+      />
+    </div>
+  </div>
+</div>

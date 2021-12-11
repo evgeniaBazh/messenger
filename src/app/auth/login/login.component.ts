@@ -40,13 +40,13 @@ export class LoginComponent implements OnInit {
   onTabClick(currentTab: TabNames) {
     this.currentTab = currentTab
   }
-  send() {
+  sendLogin() {
     this.authService.login(this.loginForm.email, this.loginForm.password);
   }
 
-  sendByEnter(event: KeyboardEvent) {
+  sendLoginByEnter(event: KeyboardEvent) {
     if (event.key === 'Enter') {
-      this.send();
+      this.sendLogin();
     }
   }
   ngOnInit(): void {}

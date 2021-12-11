@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Auth, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, User } from "firebase/auth";
+import { Auth, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, User, UserCredential } from "firebase/auth";
+import { addDoc, collection } from 'firebase/firestore';
 import { Observable, Subject } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { AppService } from '../app.service';
+import { UserData } from '../types/user-data.interface';
 
 
 @Injectable()
@@ -12,12 +14,20 @@ export class AuthService {
   constructor(private appService: AppService, private router: Router) {
   }
   auth: Auth = getAuth(this.appService.app);
-  async register(email: string, password: string) {
+  async register(user: UserData) {
     try {
-      const userCredential = await createUserWithEmailAndPassword(this.auth, email, password)
+      const userCredential: UserCredential = await createUserWithEmailAndPassword(this.auth, user.email, user.password);
+      const docRef = await addDoc(collection(this.appService.db, 'users'), {
+        name: user.name,
+        email: userCredential.user.email,
+        photoURL: userCredential.user.photoURL,
+        phone: user.phone,
+      });
     } catch (error: any) {
+      // TODO добавить отображение ошибок
       const errorCode = error.code;
       const errorMessage = error.message;
+      console.error(errorMessage, errorCode)
     }
   }
   async login(email: string, password: string) {

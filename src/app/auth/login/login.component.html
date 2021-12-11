@@ -12,13 +12,13 @@
         <app-input label="Пароль" [(model)]="loginForm.password" name="password" type="password" autocomplete="current-password" contentClass="mb-4"></app-input>
         <button class="btn" (click)="sendLogin()">Вход</button>
       </div>
-      <div class="tabs__tab-body" [ngClass]="{'tabs__tab-body--visible': currentTab === tabNames.REGISTER}">
-        <app-input label="Отображаемое имя" name="username" contentClass="mb-4" autocomplete="username"></app-input>
-        <app-input label="Пароль" name="confirm-password" type="password" autocomplete="current-password" contentClass="mb-4"></app-input>
-        <app-input label="Подтвердите пароль" name="password" type="password" autocomplete="current-password" contentClass="mb-4"></app-input>
-        <app-input label="E-mail" name="email" type="email" autocomplete="email" contentClass="mb-4"></app-input>
-        <app-input label="Номер телефона" name="password" type="text" autocomplete="phone" contentClass="mb-4"></app-input>
-        <button class="btn">Регистрация</button>
+      <div (keyup)="sendRegisterByEnter($event)" class="tabs__tab-body" [ngClass]="{'tabs__tab-body--visible': currentTab === tabNames.REGISTER}">
+        <app-input [(model)]="registerForm.name" label="Отображаемое имя" name="username" contentClass="mb-4" autocomplete="username"></app-input>
+        <app-input [(model)]="registerForm.password" label="Пароль" name="confirm-password" type="password" autocomplete="current-password" contentClass="mb-4"></app-input>
+        <app-input [(model)]="confirmPassword" label="Подтвердите пароль" name="password" type="password" autocomplete="current-password" contentClass="mb-4"></app-input>
+        <app-input [(model)]="registerForm.email" label="E-mail" name="email" type="email" autocomplete="email" contentClass="mb-4"></app-input>
+        <app-input [(model)]="registerForm.phone" label="Номер телефона" name="password" type="text" autocomplete="phone" contentClass="mb-4"></app-input>
+        <button class="btn" (click)="sendRegister()">Регистрация</button>
       </div>
     </div>
   </div>

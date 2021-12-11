@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginData } from 'src/app/types/login-data.interface';
+import { UserData } from 'src/app/types/user-data.interface';
 import { AuthService } from '../auth.service';
 
 enum TabNames {
@@ -28,10 +30,17 @@ export class LoginComponent implements OnInit {
     }
   ]
   currentTab: TabNames = TabNames.LOGIN;
-  loginForm = {
+  loginForm: LoginData = {
     email: '',
     password: '',
   }
+  registerForm: UserData = {
+    name: '',
+    email: '',
+    password: '',
+    phone: '',
+  }
+  confirmPassword: string = '';
   get tabNames(): typeof TabNames {
     return TabNames;    
   }
@@ -49,6 +58,17 @@ export class LoginComponent implements OnInit {
       this.sendLogin();
     }
   }
+
+  sendRegister() {
+    this.authService.register(this.registerForm);
+  }
+
+  sendRegisterByEnter(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.sendRegister();
+    }
+  }
+
   ngOnInit(): void {}
 
 }

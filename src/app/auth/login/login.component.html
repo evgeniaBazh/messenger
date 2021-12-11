@@ -10,7 +10,7 @@
       <div class="tabs__tab-body" [ngClass]="{'tabs__tab-body--visible': currentTab === tabNames.LOGIN}">
         <app-input label="E-mail" [(model)]="loginForm.email" name="username" contentClass="mb-4" autocomplete="username"></app-input>
         <app-input label="Пароль" [(model)]="loginForm.password" name="password" type="password" autocomplete="current-password" contentClass="mb-4"></app-input>
-        <button class="btn" (click)="send()">Вход</button>
+        <button class="btn" (click)="send()" (keyup)="sendByEnter($event)">Вход</button>
       </div>
       <div class="tabs__tab-body" [ngClass]="{'tabs__tab-body--visible': currentTab === tabNames.REGISTER}">
         <app-input label="Отображаемое имя" name="username" contentClass="mb-4" autocomplete="username"></app-input>

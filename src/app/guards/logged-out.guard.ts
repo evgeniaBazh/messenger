@@ -1,27 +1,28 @@
 import { Injectable } from '@angular/core';
 import { CanLoad, Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { AuthService } from '../auth/auth.service';
+import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class LoggedGuard implements CanLoad {
+export class LoggedOutGuard implements CanLoad {
   constructor(private router: Router, private authService: AuthService) {}
   canLoad(): Observable<boolean>{
     return this.authService.isLoggedIn().pipe(
       map((isLoggedIn: boolean) => {
         if (isLoggedIn) {
-          return isLoggedIn;
+          this.router.navigate(['']);
+          return !isLoggedIn;
         }
-        this.router.navigate(['auth']);
-        return isLoggedIn;
+        return !isLoggedIn;
       }),
       catchError(err => {
-        this.router.navigate(['auth']);
+        this.router.navigate(['']);
         throw err;
       })
     )
   }
+  
 }

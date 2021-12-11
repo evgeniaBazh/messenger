@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 enum TabNames {
@@ -35,14 +36,19 @@ export class LoginComponent implements OnInit {
     return TabNames;    
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
   onTabClick(currentTab: TabNames) {
     this.currentTab = currentTab
   }
   send() {
     this.authService.login(this.loginForm.email, this.loginForm.password);
   }
-  ngOnInit(): void {
+
+  sendByEnter(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.send();
+    }
   }
+  ngOnInit(): void {}
 
 }

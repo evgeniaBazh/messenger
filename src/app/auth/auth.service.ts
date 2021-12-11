@@ -31,6 +31,10 @@ export class AuthService {
     }
   }
 
+  logout() {
+    this.auth.signOut();
+  }
+
   public getCurrentUser(): Observable<User | null> {
     const currentUserSubject = new Subject<User | null>();
     const nextFn = (value: User | null) => {

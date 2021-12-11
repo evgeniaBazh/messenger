@@ -3,6 +3,8 @@
   max-height: 80vh;
   overflow: auto;
   background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
 }
 
 .wrap {

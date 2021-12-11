@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { CanLoad, Route, Router, UrlSegment, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { User } from 'firebase/auth';
+import { Observable, Subject } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoggedGuard implements CanLoad {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
   canLoad(
     route: Route,
     segments: UrlSegment[]
@@ -15,13 +18,20 @@ export class LoggedGuard implements CanLoad {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    // TODO Реализовать проверку наличия authToken
-    const token = localStorage.getItem('token');
-    if (!token) {
-      this.router.navigate(['auth']);
-      return false;
-    }
-
-    return true;
+    const currentUserObserver = this.authService.getCurrentUser();
+    return currentUserObserver.pipe(
+      map((currentUser: User | null) => {
+        if (!currentUser) {
+          this.router.navigate(['auth']);
+          return false;
+        }
+        return true;
+      }),
+      catchError((err) => {
+        this.router.navigate(['auth']);
+        throw err;
+      })
+    );
+    
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 enum TabNames {
   LOGIN,
@@ -34,12 +35,12 @@ export class LoginComponent implements OnInit {
     return TabNames;    
   }
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
   onTabClick(currentTab: TabNames) {
     this.currentTab = currentTab
   }
   send() {
-    console.log(this.loginForm);
+    this.authService.login(this.loginForm.email, this.loginForm.password);
   }
   ngOnInit(): void {
   }

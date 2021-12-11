@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Dialog } from './types/dialog.interface';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,8 @@ import { Dialog } from './types/dialog.interface';
 })
 export class AppComponent {
   title = 'messenger';
-
+  constructor(private appService: AppService) {
+    this.appService.initFirebaseApp();
+  }
   modalCard = false;
-  // TODO удалить после реализации взаимодействия с сервером
 }

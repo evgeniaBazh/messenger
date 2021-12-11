@@ -6,6 +6,7 @@ $inputs: $dark;
 $line: #224754;
 $count: #004f73;
 $rounded-radius: 8px;
+$attention: #FF3737;
 @mixin neon-svg() {
   filter: drop-shadow(0px 2px 6px #00577E) drop-shadow(0px -2px 6px #006B65);
 }

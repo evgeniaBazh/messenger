@@ -1,0 +1,6 @@
+{
+  "hosting": {
+    "site": "synth-wave-messenger",
+    "public": "public"
+  }
+}

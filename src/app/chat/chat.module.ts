@@ -9,6 +9,7 @@ import { CurrentUserComponent } from './current-user/current-user.component';
 import { AvatarModule } from '../shared/avatar/avatar.module';
 import { ModalModule } from '../shared/modal/modal.module';
 import { SettingsModalComponent } from '../shared/settings-modal/settings-modal.component';
+import { MessageHeaderComponent } from './message-header/message-header.component';
 
 const routes: Route[] = [
   {
@@ -23,6 +24,7 @@ const routes: Route[] = [
     ChatComponent,
     SettingsModalComponent,
     CurrentUserComponent,
+    MessageHeaderComponent,
   ],
   imports: [
     CommonModule,

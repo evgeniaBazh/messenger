@@ -4,6 +4,7 @@ export interface Message {
     avatar: string;
     name: string;
     id: number;
+    lastVisitTime?: Date;
   };
   text: string;
   time: string;

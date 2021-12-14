@@ -1,26 +1,24 @@
 import { Injectable } from '@angular/core';
 import { CanLoad, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { AuthService } from '../auth/auth.service';
-import { catchError, map } from 'rxjs/operators';
-
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { map } from 'rxjs/operators';
+import { User } from '@angular/fire/auth';
 @Injectable({
   providedIn: 'root',
 })
 export class LoggedGuard implements CanLoad {
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private auth: AngularFireAuth) {}
   canLoad(): Observable<boolean>{
-    return this.authService.isLoggedIn().pipe(
-      map((isLoggedIn: boolean) => {
-        if (isLoggedIn) {
-          return isLoggedIn;
+    return this.auth.authState.pipe(
+      map((user: any) => {
+        console.log(user);
+        
+        const logged = !!user;
+        if (!logged) {
+          this.router.navigate(['auth']);
         }
-        this.router.navigate(['auth']);
-        return isLoggedIn;
-      }),
-      catchError(err => {
-        this.router.navigate(['auth']);
-        throw err;
+        return logged;
       })
     )
   }

@@ -12,9 +12,9 @@
       </p>
     </div>
     <div class="addition">
-      <p class="addition__clock">{{ chat?.clock }}</p>
-      <div class="addition__counter" *ngIf="chat.counterMail > 0">
-        <p>{{ chat?.counterMail }}</p>
+      <p class="addition__clock">{{ chat?.time }}</p>
+      <div class="addition__counter" *ngIf="chat.unreadedMessagesCount > 0">
+        <p>{{ chat?.unreadedMessagesCount }}</p>
       </div>
     </div>
   </div>

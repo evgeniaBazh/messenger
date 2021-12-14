@@ -1,18 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { LoginData } from 'src/app/types/login-data.interface';
 import { UserData } from 'src/app/types/user-data.interface';
-import { AuthService } from '../auth.service';
+import { LoginService, Tab, TabNames } from './login.service';
 
-enum TabNames {
-  LOGIN,
-  REGISTER,
-}
-
-interface Tab {
-  label: string;
-  name: TabNames;
-}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,7 +19,6 @@ export class LoginComponent implements OnInit {
       name: TabNames.REGISTER,
     }
   ]
-  currentTab: TabNames = TabNames.LOGIN;
   loginForm: LoginData = {
     email: '',
     password: '',
@@ -45,12 +34,16 @@ export class LoginComponent implements OnInit {
     return TabNames;    
   }
 
-  constructor(private authService: AuthService, private router: Router) { }
+  getCurrentTab() {
+    return this.loginService.getCurrentTab();
+  }
+
+  constructor(private loginService: LoginService) { }
   onTabClick(currentTab: TabNames) {
-    this.currentTab = currentTab
+    this.loginService.setCurrentTab(currentTab);
   }
   sendLogin() {
-    this.authService.login(this.loginForm.email, this.loginForm.password);
+    this.loginService.login(this.loginForm.email, this.loginForm.password);
   }
 
   sendLoginByEnter(event: KeyboardEvent) {
@@ -60,7 +53,7 @@ export class LoginComponent implements OnInit {
   }
 
   sendRegister() {
-    this.authService.register(this.registerForm);
+    this.loginService.register(this.registerForm);
   }
 
   sendRegisterByEnter(event: KeyboardEvent) {

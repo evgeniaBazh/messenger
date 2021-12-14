@@ -57,7 +57,8 @@ export class ChatComponent implements OnInit {
       img: 'https://kartinki-dlya-srisovki.ru/wp-content/uploads/2018/11/gubka-bob-1.jpg',
     },
   ];
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {}
 }

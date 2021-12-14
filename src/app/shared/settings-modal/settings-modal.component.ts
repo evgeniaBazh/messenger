@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-settings-modal',
@@ -8,13 +8,14 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./settings-modal.component.scss'],
 })
 export class SettingsModalComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AngularFireAuth, private router: Router) {}
 
-  logout() {
-    this.authService.logout();
-    this.authService.isLoggedIn().subscribe(() => {
-      this.router.navigate(['auth'])
-    })
+  async logout() {
+    console.log('before logout');
+    await this.authService.signOut();
+    console.log('logout');
+    
+    this.router.navigate(['auth'])
     
   }
 

@@ -1,27 +1,27 @@
 import { Injectable } from '@angular/core';
-import { CanLoad, Route, Router, UrlSegment, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanLoad, Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoggedGuard implements CanLoad {
-  constructor(private router: Router) {}
-  canLoad(
-    route: Route,
-    segments: UrlSegment[]
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
-    // TODO Реализовать проверку наличия authToken
-    const token = localStorage.getItem('token');
-    if (!token) {
-      this.router.navigate(['auth']);
-      return false;
-    }
-
-    return true;
+  constructor(private router: Router, private authService: AuthService) {}
+  canLoad(): Observable<boolean>{
+    return this.authService.isLoggedIn().pipe(
+      map((isLoggedIn: boolean) => {
+        if (isLoggedIn) {
+          return isLoggedIn;
+        }
+        this.router.navigate(['auth']);
+        return isLoggedIn;
+      }),
+      catchError(err => {
+        this.router.navigate(['auth']);
+        throw err;
+      })
+    )
   }
 }

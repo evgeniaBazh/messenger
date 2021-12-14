@@ -1,0 +1,8 @@
+@import 'src/styles/_variables.scss';
+
+.contacts {
+  height: calc(100vh - 198px);
+  max-width: 433px;
+  width: 100%;
+  background-color: $primary;
+}

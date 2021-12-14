@@ -1,0 +1,37 @@
+@import 'src/styles/_variables.scss';
+
+p {
+  font-family: 'Roboto', sans-serif;
+  color: $light;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: normal;
+  margin-left: 18px;
+}
+
+.current-user {
+  height: 113px;
+  width: 100%;
+  max-width: 433px;
+  background-color: $panels;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  border-top: 1px solid $line;
+}
+
+.settings {
+  margin-left: 12px;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+  svg {
+    fill: $light;
+    @include neon-svg;
+  }
+}

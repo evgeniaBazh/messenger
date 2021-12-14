@@ -30,6 +30,7 @@
         "source": "**",
         "destination": "/index.html"
       }
-    ]
+    ],
+    "site": "synth-wave-messenger"
   }
 }

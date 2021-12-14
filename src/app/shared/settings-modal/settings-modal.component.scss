@@ -1,0 +1,52 @@
+@import 'src/styles/_variables.scss';
+
+.wrap {
+  background-color: $panels;
+  border: 1px solid $line;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 22px;
+  background-image: url('~/src/assets/img/decor.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.settings-wrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 34px;
+}
+
+.description {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: $light;
+  margin-bottom: 13px;
+}
+
+.info {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: $light;
+}
+
+.avatar {
+  margin-bottom: 49px;
+  cursor: pointer;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn.attention {
+  margin-left: auto;
+}

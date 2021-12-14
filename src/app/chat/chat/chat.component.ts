@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from '../chat.service';
 import { Message } from '../types/message.interface';
 
 @Component({
@@ -57,8 +58,10 @@ export class ChatComponent implements OnInit {
       img: 'https://kartinki-dlya-srisovki.ru/wp-content/uploads/2018/11/gubka-bob-1.jpg',
     },
   ];
-  constructor() {
+  constructor(private chatService: ChatService) {
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.chatService.getCurrentUserChats();
+  }
 }

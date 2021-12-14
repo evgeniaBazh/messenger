@@ -10,6 +10,7 @@ import { AvatarModule } from '../shared/avatar/avatar.module';
 import { ModalModule } from '../shared/modal/modal.module';
 import { SettingsModalComponent } from '../shared/settings-modal/settings-modal.component';
 import { MessageHeaderComponent } from './message-header/message-header.component';
+import { ChatService } from './chat.service';
 
 const routes: Route[] = [
   {
@@ -33,5 +34,8 @@ const routes: Route[] = [
     ModalModule,
     DialogueModule,
   ],
+  providers: [
+    ChatService,
+  ]
 })
 export class ChatModule {}

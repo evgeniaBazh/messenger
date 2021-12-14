@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "full-shrek-messenger": {
+      "hosting": {
+        "messenger": [
+          "full-shrek-messenger"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "full-shrek-messenger"
+  }
+}

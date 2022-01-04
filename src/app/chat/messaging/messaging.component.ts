@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Message } from '../types/message.interface';
+import { UIMessage } from '../types/message.interface';
 
 @Component({
   selector: 'app-messaging',
@@ -8,6 +8,6 @@ import { Message } from '../types/message.interface';
 })
 export class MessagingComponent implements OnInit {
   constructor() {}
-  @Input() messages?: Message[];
+  @Input() messages?: UIMessage[];
   ngOnInit(): void {}
 }

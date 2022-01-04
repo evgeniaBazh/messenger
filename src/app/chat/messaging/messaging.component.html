@@ -1,6 +1,6 @@
 <div class="block-messages" *ngFor="let message of messages">
   <div class="block-messages__avatar">
-    <app-avatar [src]="message.user.avatar"></app-avatar>
+    <app-avatar [src]="message.user.photoURL"></app-avatar>
   </div>
   <div class="message">
     <div class="name-time">
@@ -15,23 +15,27 @@
           sent: message.isCurrentUser,
           incoming: !message.isCurrentUser
         }"
-        *ngIf="(message.img && message.text) || message.text"
+        *ngIf="(message.images?.length && message.text) || message.text"
       >
         {{ message.text }}
         <br />
+        <ng-template *ngFor="let img in message.images">
+          <img
+            *ngIf="img && message.text"
+            src="{{ img }}"
+            alt=""
+            class="message__img"
+          />
+        </ng-template>
+      </p>
+      <ng-template *ngFor="let img in message.images">
         <img
-          *ngIf="message.img && message.text"
-          src="{{ message.img }}"
+          *ngIf="img && !message.text"
+          src="{{ img }}"
           alt=""
           class="message__img"
         />
-      </p>
-      <img
-        *ngIf="message.img && !message.text"
-        src="{{ message.img }}"
-        alt=""
-        class="message__img"
-      />
+      </ng-template>
     </div>
   </div>
 </div>

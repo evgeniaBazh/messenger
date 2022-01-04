@@ -1,4 +1,5 @@
-import { ChatData } from "./dialog.interface";
+import { DocumentReference } from "firebase/firestore";
+import { ChatData } from "./chat-data.interface";
 import { LoginData } from "./login-data.interface";
 
 export interface UserData extends LoginData {
@@ -9,5 +10,5 @@ export interface UserData extends LoginData {
   photoURL?: string;
   userId?: string;
   phone: string;
-  chats?: ChatData[];
+  chats?: ChatData[] | DocumentReference[];
 }

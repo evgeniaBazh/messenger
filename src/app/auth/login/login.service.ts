@@ -45,7 +45,7 @@ export class LoginService {
         userId: credentials.user?.uid || '',
       }
       
-      usersCollection.add(userData);
+      usersCollection.doc(userData.userId).set(userData);
       this.setCurrentTab(TabNames.LOGIN);
     } catch(err) {
       // TODO показывать TOAST

@@ -7,6 +7,7 @@ export interface UserData extends LoginData {
    */
   name: string;
   photoURL?: string;
+  userId?: string;
   phone: string;
   chats?: ChatData[];
 }

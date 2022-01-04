@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { UserCredential } from 'firebase/auth';
 import { UserData } from 'src/app/types/user-data.interface';
 
 export enum TabNames {
@@ -36,10 +37,15 @@ export class LoginService {
   
   async register(registerForm: UserData) {
     try {
-      await this.auth.createUserWithEmailAndPassword(registerForm.email, registerForm.password);
+      const credentials: firebase.default.auth.UserCredential = await this.auth.createUserWithEmailAndPassword(registerForm.email, registerForm.password);
       // Показывать TOAST
       const usersCollection = this.afs.collection('users');
-      usersCollection.add(registerForm);
+      const userData: UserData = {
+        ...registerForm,
+        userId: credentials.user?.uid || '',
+      }
+      
+      usersCollection.add(userData);
       this.setCurrentTab(TabNames.LOGIN);
     } catch(err) {
       // TODO показывать TOAST

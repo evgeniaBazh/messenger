@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatService } from '../chat.service';
 import { Message } from '../types/message.interface';
 
 @Component({
@@ -58,10 +57,17 @@ export class ChatComponent implements OnInit {
       img: 'https://kartinki-dlya-srisovki.ru/wp-content/uploads/2018/11/gubka-bob-1.jpg',
     },
   ];
-  constructor(private chatService: ChatService) {
+  constructor() {
+  }
+
+  getChats() {
+    // this.chatService.currentUserChats.subscribe((chats: any) => {
+    //   console.log('chats: ', chats);
+      
+    // })
   }
 
   ngOnInit(): void {
-    this.chatService.getCurrentUserChats();
+    this.getChats();
   }
 }

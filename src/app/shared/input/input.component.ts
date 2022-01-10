@@ -4,13 +4,13 @@ import { InputTypes } from 'src/app/types/input-types.enum';
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss']
+  styleUrls: ['./input.component.scss'],
 })
 export class InputComponent implements OnInit {
   get types(): typeof InputTypes {
     return InputTypes;
   }
-  constructor() { }
+  constructor() {}
   @Input()
   contentClass: string = '';
 
@@ -35,7 +35,7 @@ export class InputComponent implements OnInit {
 
   // Эмуляция ngModel
   @Input()
-  public model: string = ''
+  public model: string | undefined = '';
 
   @Output()
   public modelChange: EventEmitter<string> = new EventEmitter();
@@ -50,8 +50,5 @@ export class InputComponent implements OnInit {
     return this.visibility ? InputTypes.text : InputTypes.password;
   }
 
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

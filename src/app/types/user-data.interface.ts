@@ -1,5 +1,5 @@
-import { ChatData } from "./dialog.interface";
-import { LoginData } from "./login-data.interface";
+import { ChatData } from './dialog.interface';
+import { LoginData } from './login-data.interface';
 
 export interface UserData extends LoginData {
   /**
@@ -7,6 +7,6 @@ export interface UserData extends LoginData {
    */
   name: string;
   photoURL?: string;
-  phone: string;
+  phone?: string;
   chats?: ChatData[];
 }

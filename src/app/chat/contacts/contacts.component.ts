@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChatData } from 'src/app/types/dialog.interface';
+import { UserData } from 'src/app/types/user-data.interface';
 
 @Component({
   selector: 'app-contacts',
@@ -38,6 +39,16 @@ export class ContactsComponent implements OnInit {
       lastMessage: 'Нужно взять разрешение у Кади ;)',
       unreadedMessagesCount: 1,
       status: 'online',
+    },
+  ];
+
+  searchUsers: UserData[] = [
+    {
+      name: 'Name',
+      email: 'name@example.com',
+      password: '',
+      photoURL:
+        'https://www.images.lesyadraw.ru/2014/09/kak_narisovat_ela_tetrad_smerti.jpg',
     },
   ];
 }

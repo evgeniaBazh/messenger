@@ -1,0 +1,58 @@
+@import 'src/styles/_variables.scss';
+h1,
+h2,
+h3,
+p {
+  font-family: 'Roboto', sans-serif;
+  color: $light;
+  margin: 0;
+  padding: 0;
+}
+
+.search-list {
+  height: 91px;
+  width: 100%;
+  background-color: $panels;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  padding-top: 6px;
+  position: relative;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__name {
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .decor {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.wrap {
+  border-bottom: 1px solid $line;
+  height: 85px;
+  width: 100%;
+  background-color: $panels;
+  display: flex;
+  align-items: center;
+  padding-top: 6px;
+  position: relative;
+  margin-left: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+}

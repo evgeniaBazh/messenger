@@ -1,0 +1,12 @@
+<div class="search-list" *ngIf="chat">
+  <div class="search-list__avatar">
+    <app-avatar [src]="chat.photoURL"></app-avatar>
+  </div>
+  <div class="wrap">
+    <div class="search-list__block">
+      <p class="search-list__name">
+        {{ chat?.name }}
+      </p>
+    </div>
+  </div>
+</div>

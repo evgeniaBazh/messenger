@@ -1,4 +1,9 @@
 <div class="contacts">
   <app-dialogue [chat]="chat" *ngFor="let chat of contacts"></app-dialogue>
+  <div class="separator">Результаты общего поиска</div>
+  <app-search-list-user
+    [chat]="user"
+    *ngFor="let user of searchUsers"
+  ></app-search-list-user>
 </div>
 <app-current-user></app-current-user>

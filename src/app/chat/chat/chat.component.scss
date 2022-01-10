@@ -6,6 +6,9 @@
   height: 85px;
   background-color: $primary;
   border-bottom: 1px solid $line;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .messaging {
@@ -19,4 +22,29 @@
 
 .chat-page {
   display: flex;
+}
+
+.users-search-block {
+  width: 100%;
+  max-width: 311px;
+  height: 42px;
+  background-color: $dark;
+  font-size: 18px;
+  padding-left: 18px;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  color: $light;
+}
+
+.users-search-block ::placeholder {
+  color: $placeholder;
+}
+
+.users-search-block:focus::placeholder {
+  color: transparent;
+}
+
+.users-search-block:focus {
+  border: 2px solid $accent;
 }

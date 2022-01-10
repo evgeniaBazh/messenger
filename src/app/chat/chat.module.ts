@@ -10,6 +10,7 @@ import { AvatarModule } from '../shared/avatar/avatar.module';
 import { ModalModule } from '../shared/modal/modal.module';
 import { SettingsModalComponent } from '../shared/settings-modal/settings-modal.component';
 import { MessageHeaderComponent } from './message-header/message-header.component';
+import { SearchListUserComponent } from './search-list-user/search-list-user.component';
 
 const routes: Route[] = [
   {
@@ -25,6 +26,7 @@ const routes: Route[] = [
     SettingsModalComponent,
     CurrentUserComponent,
     MessageHeaderComponent,
+    SearchListUserComponent,
   ],
   imports: [
     CommonModule,

@@ -12,8 +12,6 @@ export class LoggedGuard implements CanLoad {
   canLoad(): Observable<boolean>{
     return this.auth.authState.pipe(
       map((user: any) => {
-        console.log(user);
-        
         const logged = !!user;
         if (!logged) {
           this.router.navigate(['auth']);

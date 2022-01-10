@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ChatData } from 'src/app/types/dialog.interface';
+import { ChatData } from 'src/app/types/chat-data.interface';
 
 @Component({
   selector: 'app-dialogue',

@@ -1,4 +1,5 @@
-import { ChatData } from "./dialog.interface";
+import { DocumentReference, Timestamp } from "firebase/firestore";
+import { ChatData } from "./chat-data.interface";
 import { LoginData } from "./login-data.interface";
 
 export interface UserData extends LoginData {
@@ -7,6 +8,9 @@ export interface UserData extends LoginData {
    */
   name: string;
   photoURL?: string;
+  userId?: string;
   phone: string;
-  chats?: ChatData[];
+  chats?: ChatData[] | DocumentReference[];
+  lastVisitTime?: Timestamp | Date;
+
 }

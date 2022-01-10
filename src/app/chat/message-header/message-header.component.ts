@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Timestamp } from 'firebase/firestore';
 import { DateService } from 'src/app/shared/date.service';
-import { Message } from '../types/message.interface';
+import { UIMessage } from '../types/message.interface';
 
 @Component({
   selector: 'app-message-header',
@@ -8,7 +9,7 @@ import { Message } from '../types/message.interface';
   styleUrls: ['./message-header.component.scss'],
 })
 export class MessageHeaderComponent implements OnInit {
-  @Input() messages?: Message[];
+  @Input() messages?: UIMessage[];
 
   getLastMessage() {
     if (this.messages) {
@@ -21,9 +22,9 @@ export class MessageHeaderComponent implements OnInit {
   getTime(): string {
     if (this.getLastMessage()) {
       const message = this.getLastMessage();
-
+      const date = (message?.user.lastVisitTime as Timestamp).toDate();
       return this.dateService.getFormatedRelativeDate(
-        message?.user.lastVisitTime
+        date,
       );
     }
 

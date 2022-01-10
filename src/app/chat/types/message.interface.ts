@@ -1,13 +1,14 @@
+import { DocumentReference, Timestamp } from "firebase/firestore";
+import { UserData } from "src/app/types/user-data.interface";
+
 export interface Message {
-  id: number;
-  user: {
-    avatar: string;
-    name: string;
-    id: number;
-    lastVisitTime?: Date;
-  };
-  text: string;
-  time: string;
+  user: UserData;
+  text?: string;
+  time: Timestamp | Date;
+  images?: string[];
+  id?: string;
+}
+
+export interface UIMessage extends Message {
   isCurrentUser: boolean;
-  img: string;
 }

@@ -21,10 +21,10 @@ const routes: Route[] = [
   declarations: [
     ContactsComponent,
     MessagingComponent,
-    ChatComponent,
     SettingsModalComponent,
     CurrentUserComponent,
     MessageHeaderComponent,
+    ChatComponent,
   ],
   imports: [
     CommonModule,
